@@ -114,7 +114,7 @@
 
       @include desktop_and_print {
         @include themed() {
-          background: t('primary-lighter');
+          background: t('primary-light');
         }
         border-bottom: 0px;
         width: 60%;
@@ -160,7 +160,7 @@
 
     @include themed() {
       border: 1px solid t('primary-light');
-      color: t('success');
+      color: t('info');
     }
 
     &:hover {

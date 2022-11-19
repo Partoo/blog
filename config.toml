@@ -6,6 +6,8 @@ publishDir = 'docs'
 summarylength = 10
 enableEmoji = true
 enableRobotsTXT = true
+tags = [ "minimal", "responsive", "blog","light", "clean", "search"]
+features = ["disqus", "site search", "responsive", "google analytics", "side bar"]
 
 # Enable Disqus
 #disqusShortname = ""
