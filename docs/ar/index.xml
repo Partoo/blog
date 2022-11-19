@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tao Blog</title>
-    <link>http://example.org/ar/</link>
+    <link>https://partoo.github.io/blog/ar/</link>
     <description>Recent content on Tao Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/ar/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://partoo.github.io/blog/ar/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
