@@ -1,0 +1,12 @@
+#skillbar {
+    @include themed {
+        color: #fff;
+        background-color: rgb(114, 114, 114);
+    }
+    .box {
+        padding: 8px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}

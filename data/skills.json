@@ -1,0 +1,22 @@
+{
+    "HTML": {
+        "color": "#188e49",
+        "score": 80
+    },
+    "CSS": {
+        "color": "#0d91a5",
+        "score": 85
+    },
+    "JavaScript/Vue": {
+        "color": "#e44d49",
+        "score": 85
+    },
+    "PHP/Laravel": {
+        "color": "#916626",
+        "score": 85
+    },
+    "JAVA/SpringBoot": {
+        "color": "#333d72",
+        "score": 80
+    }
+}

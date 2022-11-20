@@ -2,22 +2,22 @@
   name = "主页"
   identifier = "main"
   weight = 100
-  url = "/zh/"
+  url = "/zh-cn/"
 
   [[main]]
   name = "博客"
   weight = 200
   identifier = "posts"
-  url = "/zh/post/"
+  url = "/zh-cn/post/"
 
   [[main]]
   name = "关于"
   weight = 300
   identifier = "about"
-  url = "/zh/about/"
+  url = "/zh-cn/about/"
 
-  [[main]]
-  name = "联系"
-  weight = 400
-  identifier = "contact"
-  url = "/zh/contact/"
+  # [[main]]
+  # name = "联系"
+  # weight = 400
+  # identifier = "contact"
+  # url = "/zh-cn/contact/"

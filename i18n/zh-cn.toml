@@ -46,3 +46,6 @@ other = "更新"
 
 [series_posts]
 other = "这个系列的帖子"
+
+[skills]
+other = "编程技能"

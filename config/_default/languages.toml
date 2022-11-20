@@ -2,10 +2,10 @@
 title = "Tao Blog"
 weight = 1
 LanguageName = "EN"
-contentDir = "content"
+contentDir = "content/english"
 
-[zh]
+[zh-cn]
 title = "Tao Blog"
 weight = 2
 LanguageName = "中文"
-contentDir = "content/zh"
+contentDir = "content/chinese"
