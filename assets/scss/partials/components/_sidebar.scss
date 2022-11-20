@@ -1,7 +1,10 @@
 .sidebar {
   margin-top: 40px;
   @include themed() {
-    background-color: t('accent');
+    background-color: darken($color: t('accent'), $amount: 3);
+    background-image: linear-gradient(45deg, t('accent') 25%, transparent 25%, transparent 75%, t('accent') 75%, t('accent')),
+linear-gradient(-45deg, t('accent') 25%, transparent 25%, transparent 75%, t('accent') 75%, t('accent'));
+background-size: 60px 60px;
   }
   @include desktop_and_print {
     z-index: 2;
@@ -14,13 +17,14 @@
     @include themed() {
       @include ltr {
         margin-right: 4px;
-        border-right: t('border');
+        // border-right: t('border');
       }
 
       @include rtl {
         margin-left: 4px;
-        border-left: t('border');
+        // border-left: t('border');
       }
+      box-shadow: t('box-shadow');
     }
   }
 
@@ -31,6 +35,8 @@
       flex-grow: 1;
       justify-content: center;
     }
+    
+    
   }
 
   &__list {

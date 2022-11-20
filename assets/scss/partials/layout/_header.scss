@@ -10,9 +10,9 @@
   @include desktop {
     position: sticky;
 
-    @include themed() {
-      border-bottom: t('border');
-    }
+    // @include themed() {
+      // border-bottom: t('border');
+    // }
   }
 
   @include print {

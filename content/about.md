@@ -1,25 +1,15 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
+description = "Partoo, A full-stack developer. Familiar with Java/SpringBoot, PHP/Laravel, HTML and Vuejs"
 date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hugo Authors"
+author = "Partoo"
 +++
 
-Written in Go, Hugo is an open source static site generator available under the [Apache License 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+I'm a full-stack developer living in China. I was obsessed with computer science in 2002 when I was in my college. During college, I used my spare time to pass the MCP/MCSE/MCDBA of Microsoft. I have put in a lot of effort to keep myself in the computer industry -- I worked as a graphic designer, so I can use Photoshop, Illustrator, After Effects proficiently, and have a good artistic aesthetic; I have used ASP to make a website management system, and used ActionScript to make animated short films.
 
-Hugo makes use of a variety of open source projects including:
+I really have a deeper understanding of programming after I learned about Laravel 3.x. I began to have a new understanding of SOLID principles and design patterns, and I was able to think the software development process from a higher perspective.
+During the COVID-19 epidemic in 2022, I successively prepared system analysts and system architects for the China Computer Technology and Software Professional Technical Qualification (Level) Examination. Although the exams were canceled due to the epidemic, but it made my technology stack more enriched.
 
-- https://github.com/yuin/goldmark
-- https://github.com/alecthomas/chroma
-- https://github.com/muesli/smartcrop
-- https://github.com/spf13/cobra
-- https://github.com/spf13/viper
+Now I am using SpringBoot to do some microservice-based experiments, and I am also planning to learn some knowledge of artificial intelligence.
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Optimism, positivity, and enthusiasm are my labels, and I hope to have the opportunity to accept different challenges.

@@ -7,7 +7,7 @@ a {
 
   &:hover {
     @include themed() {
-      color: t('success');
+      color: t('success') !important;
     }
   }
 }

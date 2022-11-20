@@ -7,7 +7,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: none;
+    @include themed() {
+      box-shadow: t('box-shadow');
+    }
   }
 
   &__list {
@@ -17,7 +19,7 @@
     width: 100%;
 
     @include themed() {
-      background-color: t('primary-lighter');
+      background-color: t('accent');
     }
 
     @include desktop_and_print {
@@ -39,10 +41,14 @@
       text-transform: uppercase;
       text-align: center;
       white-space: nowrap;
+      @include themed {
+        border-bottom: 1px dotted t('primary');
+      }
 
       @include desktop {
         padding-top: 0;
         padding-bottom: 0;
+        border-bottom: none !important;
 
         &:not(:last-child) {
           @include ltr {
@@ -62,7 +68,7 @@
 
       @include desktop {
         @include themed() {
-          border-bottom: 1px solid t('primary');
+          border-bottom: 3px solid t('success');
         }
       }
     }
@@ -71,4 +77,11 @@
   &--active {
     display: block;
   }
+}
+.optionswitch__list {
+  a {
+    &:hover {
+      color: inherit;
+    }
+  } 
 }

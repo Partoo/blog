@@ -99,9 +99,9 @@
       padding: 48px;
       border-radius: 0.5em;
 
-      @include themed() {
-        box-shadow: t('shadow');
-      }
+      // @include themed() {
+        // box-shadow: t('shadow');
+      // }
     }
 
     &--left,
@@ -114,7 +114,7 @@
 
       @include desktop_and_print {
         @include themed() {
-          background: t('primary-light');
+          background-color: rgba($color: t('primary-light'), $alpha: 0.75);
         }
         border-bottom: 0px;
         width: 60%;
@@ -159,8 +159,9 @@
     padding: 10px;
 
     @include themed() {
-      border: 1px solid t('primary-light');
-      color: t('info');
+      // border: 1px solid t('primary-lighter');
+      color: #fff;
+      background-color: t('success');
     }
 
     &:hover {

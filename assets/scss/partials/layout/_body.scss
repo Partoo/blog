@@ -4,6 +4,7 @@
   // work around to style body
   @include themed() {
     color: t('primary');
+    font-weight: 400;
     background-color: t('accent');
   }
 }

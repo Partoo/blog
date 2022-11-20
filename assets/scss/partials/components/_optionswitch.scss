@@ -1,6 +1,8 @@
 .optionswitch {
   position: relative;
-
+  a {
+    color: rgba(255, 255, 255, 0.66) !important;
+  }
   &__label {
     cursor: pointer;
     white-space: nowrap;
@@ -18,7 +20,7 @@
       top: 32px;
 
       @include themed() {
-        background: t('primary-lighter');
+        background: darken($color: t('primary-lighter'), $amount: 5);
         box-shadow: t('shadow');
       }
     }
@@ -58,7 +60,7 @@
       @include themed() {
         background: t('primary-lighter');
         box-shadow: t('shadow');
-        border-color: t('primary-lighter');
+        border-color: t('primary-light');
       }
     }
   }

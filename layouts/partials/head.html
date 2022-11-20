@@ -145,7 +145,7 @@
 
 
   <!-- JavaScript -->
-  {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
+  {{ $anatoleHeader := resources.Get "js/header.js" }}
   {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint }}
   <script
     type="text/javascript"
@@ -155,7 +155,7 @@
   ></script>
 
   {{ if not .Site.Params.disableThemeSwitcher }}
-    {{ $anatoleThemeSwitcher := resources.Get "js/anatole-theme-switcher.js" }}
+    {{ $anatoleThemeSwitcher := resources.Get "js/theme-switcher.js" }}
     {{ $secureThemeSwitcherJS := $anatoleThemeSwitcher |  resources.Minify | resources.Fingerprint }}
     <script
       type="text/javascript"
