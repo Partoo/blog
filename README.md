@@ -20,4 +20,4 @@ demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.i
 
 ## License
 
-MIT © [g1eny0ung](https://github.com/g1eny0ung)
+MIT © [partoo](https://github.com/Partoo)
