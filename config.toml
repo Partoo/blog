@@ -1,4 +1,4 @@
-baseURL = 'https://partoo.github.io/blog'
+baseURL = 'https://www.talktao.cc'
 languageCode = 'en-us'
 title = "Tao Blog"
 theme = 'partoo'
