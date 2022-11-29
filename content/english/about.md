@@ -1,9 +1,8 @@
 +++
 title = "About Me"
 description = "Partoo, A full-stack developer. Familiar with Java/SpringBoot, PHP/Laravel, HTML and Vuejs"
-date = "2019-02-28"
+date = "2022-11-28"
 author = "Partoo"
-thumbnail= "images/landscape.jpg"
 layout = "about"
 +++
 
