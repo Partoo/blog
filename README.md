@@ -10,8 +10,6 @@ This theme is based on [Anatole](https://github.com/lxndrblz/anatole.git) - the 
 
 This theme main features are **clean** and **minify**. Support **light/dark mode** and **multi-lang** out of the box.
 
-demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
-
 ![https://raw.githubusercontent.com/Partoo/blog/master/screenshot.png](https://raw.githubusercontent.com/Partoo/blog/master/screenshot.png)
 
 ## Example
