@@ -1,6 +1,6 @@
 baseURL = 'https://www.talktao.cc'
 languageCode = 'en-us'
-title = "Tao Blog"
+title = "说道"
 theme = 'partoo'
 publishDir = 'docs'
 summarylength = 10

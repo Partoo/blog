@@ -1,11 +1,11 @@
 [en]
-title = "Tao Blog"
+title = "Talk Tao"
 weight = 1
 LanguageName = "EN"
 contentDir = "content/english"
 
 [zh-cn]
-title = "Tao Blog"
+title = "说道"
 weight = 2
 LanguageName = "中文"
 contentDir = "content/chinese"
