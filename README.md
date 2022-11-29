@@ -1,5 +1,5 @@
 # A Hugo Blog with Custom Theme
-![GitHub](https://img.shields.io/github/license/Partoo/blog)
+![GitHub](https://img.shields.io/github/license/Partoo/blog?style=flat-square)
 
 - [Intro](#intro)
 - [Example](#example)
