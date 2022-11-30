@@ -88,6 +88,23 @@ Create a file named "skillbar.html" in "layouts/partials" folder and paste the c
 Then we can use it by `{{partial "skillsbar" .}}` anywhere.
 ### Deploy
 There are many deployment schemes, using netify, github page, etc., I choose to use custom domain name + github page + cloud flare.
+I wrote a bash called deploy.sh to simplify deployment
+```bash
+#!/bin/bash -e
+cd /yourLocalDevFolder && hugo --minify
+commit_message="$1"
+git add .
+git commit -m "$commit_message"
+git push -u origin main
+```
+You can run the shell command with commit description as the parameter to push file to github. Also, you can add an alias to .zshrc/.bashrc to reduce operating procedures further.
+```
+alias ttd="cd /projectFolder && bash deploy.sh
+```
+After wrote a post, just run:
+```bash
+ttd "post a new article about bash"
+```
 
 ### Summarize
 Hugo is highly mature and stable, but it is still necessary to use [Nuxt](https://nuxt.com/v3) to make some modern single-page applications.

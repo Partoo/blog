@@ -90,6 +90,22 @@ thumbnail: https://raw.githubusercontent.com/Partoo/blog/main/static/images/skil
 这样就可以在任意地方通过 `{{partial "skillsbar" .}}` 进行调用了
 ### 部署
 有很多种部署方案，netify/github pages 等等，我选择使用cloud flare + github pages，然后绑定自己的域名。这部分很简单，也都有相关的说明文档。
-
+为了方便部署，写了一个简单的 deploy.sh
+```bash
+#!/bin/bash -e
+cd /yourLocalDevFolder && hugo --minify
+commit_message="$1"
+git add .
+git commit -m "$commit_message"
+git push -u origin main
+```
+使用的时只需要加上git commit 的描述即可打包提交到github中，甚至可以在 .zshrc/.bashrc中进行alias进一步简化操作，例如我的是：
+```
+alias ttd="cd /projectFolder && bash deploy.sh
+```
+这样每次写完一篇文章，只需要在终端中运行
+```bash
+ttd "post a new article about bash"
+```
 ### 总结
 Hugo 是成熟度很高的一款产品，也非常稳定，不过如果想做一些例如SPA之类的现代页面还是使用 [Nuxt](https://nuxt.com/v3) 更好，这也是我日后的一个小目标。
