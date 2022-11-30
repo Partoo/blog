@@ -66,18 +66,7 @@
         {{- partial "mermaid.html" . -}}
       {{- end -}}
     </div>
-    <div class="post__content skills">
-      <h1>{{ i18n "skills" }}</h1>
-      {{ $map:=($.Site.Data.skills)}}
-        {{range $key, $val :=$map }}
-        <div id="skillbar">
-          <div class="box" style="background-color:{{$val.color}}; width:{{$val.score}}%">
-            <span class="name">{{$key}}</span>
-            <span class="score">{{$val.score}}%</span>
-          </div>
-        </div>
-      {{end}}
-    </div>
+    {{partial "skillsbar" .}}
     <div class="post__footer">
       {{ with .Page.Params.Categories }}
         {{ partial "taxonomy/categories.html" . }}

@@ -10,10 +10,10 @@ tags = [ "minimal", "responsive", "blog","light", "clean", "search"]
 features = ["disqus", "site search", "responsive", "google analytics", "side bar"]
 
 # Enable Disqus
-#disqusShortname = ""
+disqusShortname = "talktao"
 
 # Google Analytics
-#googleAnalytics = "UA-123-45"
+googleAnalytics = "G-L57MVQGWSV"
 
 # Syntax highlighting
 # pygmentsUseClasses = true   
@@ -21,7 +21,7 @@ features = ["disqus", "site search", "responsive", "google analytics", "side bar
 # pygmentsCodefencesGuessSyntax = true
 
 # Localized dates requires Hugo version 0.87.0
-# localizedDates = true
+localizedDates = true
 [markup]
   [markup.tableOfContents]
     endLevel = 2

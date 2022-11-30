@@ -1,6 +1,10 @@
 .post {
   margin: 30px;
-
+  .post__hr {
+    @include themed() {
+      border-bottom: t('border');
+    }
+  }
   @include themed() {
     background-color: t('accent');
   }
@@ -66,13 +70,14 @@
     }
 
 
-// code,pre {
-//     padding: .5rem 0;
-//     line-height: 1.5;
-//     font-size: 13.8px;
-//     font-family: Consolas,Monaco,Menlo,dejavu sans mono,bitstream vera sans mono,courier new,lucida console,lucida sans typewriter,liberation mono,nimbus mono l,Monaco,Courier,monospace;
-//     overflow: auto
-// }
+code *{
+    font-family:monospace,Consolas,Monaco,Menlo,dejavu sans mono,bitstream vera sans mono,courier new,lucida console,lucida sans typewriter,liberation mono,nimbus mono l,Monaco,Courier;
+    // font-size: 1.5rem;
+    padding: 0em;
+    line-height: 2;
+    font-size: 13.8px;
+    word-wrap: break-word;
+}
 
 // *:not(.chroma) code,.theme__dark *:not(.chroma) pre {
 //     color: #eee;
