@@ -47,7 +47,8 @@
     width: 100%;
     height: $thumbnail-height;
     object-fit: cover;
-    display: block;
+    object-position: right;
+    // display: block;
 
     &-wrapper {
       border-radius: 2px;
