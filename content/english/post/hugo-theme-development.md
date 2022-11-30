@@ -1,7 +1,10 @@
 ---
-author: Partoo
 title: Hugo Theme Development
 date: 2022-11-28
+tags:
+    - hugo
+categories:
+    - front
 thumbnail: https://raw.githubusercontent.com/Partoo/blog/main/static/images/skillsbar.jpg
 ---
 ### Background

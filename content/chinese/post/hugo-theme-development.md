@@ -3,10 +3,16 @@ author: Partoo
 title: Hugo主题开发心得
 date: 2022-11-28
 description: Hugo主题开发心得
+mermaid: true
+tags: 
+    - hugo
+categories:
+    - 前端
 thumbnail: https://raw.githubusercontent.com/Partoo/blog/main/static/images/skillsbar.jpg
 ---
 ### 背景
 很久没有写技术博客了，这段时间想把在Notion中的一些笔记整理出来，于是在Hexo、Hugo、VuePress中进行了选择，最终决定使用Hugo。
+
 ### 开发流程
 开发还是非常简单的，查看官方文档了解一下基本概念就可以上手了。我参考了 [Alex Bilz's](https://www.alexbilz.com) 的一个不错的主题 - [Anatole](https://github.com/lxndrblz/anatole.git) 并且自己加上一个Skills Bar的功能：
 

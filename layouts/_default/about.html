@@ -54,6 +54,9 @@
         {{- partial "series.html" . -}}
       {{- end -}}
 
+
+      {{partial "skillsbar" .}}
+
       {{- if (eq .Site.Params.relatedPosts true) -}}
         {{- partial "related.html" . -}}
       {{- end -}}
@@ -66,7 +69,6 @@
         {{- partial "mermaid.html" . -}}
       {{- end -}}
     </div>
-    {{partial "skillsbar" .}}
     <div class="post__footer">
       {{ with .Page.Params.Categories }}
         {{ partial "taxonomy/categories.html" . }}

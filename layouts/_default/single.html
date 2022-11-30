@@ -62,7 +62,7 @@
         {{- partial "contact.html" . -}}
       {{- end -}}
 
-      {{- if (eq .Site.Params.mermaid.enable true) -}}
+      {{- if (eq .Params.mermaid true) -}}
         {{- partial "mermaid.html" . -}}
       {{- end -}}
     </div>

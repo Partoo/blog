@@ -1,5 +1,6 @@
 title = "说道-TalkTao.cc"
 author = "talktao.cc"
+
 #copyright = "2020-2021"
 description = "I'm a full-stack developer live in China.<br>君子不器 博观约取"
 profilePicture = "images/avatar.png"
@@ -26,16 +27,19 @@ listDateFormat = "2/1/2006"
 # Commento Comments
 # CommentoURL = "https://commento.example.com/js/commento.js"
 # Read More links for truncated summaries
-# readMore = true
-# postSectionName = "blog"
-# relatedPosts = true
-# numberOfRelatedPosts = 3
+readMore = true
+postSectionName = "blog"
+relatedPosts = true
+numberOfRelatedPosts = 3
 
 
 reversepagetitle = true # When set to 'true', the Window Title will be reversed to 'Title | Author' instead of the default 'Author | Title'
 
-# hidesidebar = true
-
+hidesidebar = true
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  
 [simpleAnalytics]
 # enable = true
 # customurl = "https://analytics.example.com"
@@ -50,7 +54,7 @@ reversepagetitle = true # When set to 'true', the Window Title will be reversed 
 
 ## Math settings
 [math]
-enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 
 ## Social links
@@ -76,4 +80,4 @@ title = "e-mail"
 url = "mailto:partoo@live.cn"
 
 [mermaid]
-# enable = true
+enable = true
