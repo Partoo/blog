@@ -1,15 +1,16 @@
 ---
 author: Partoo
-title: Hugo Theme Development
+title: Hugo主题开发心得
 date: 2022-11-28
+description: Hugo主题开发心得
 thumbnail: https://raw.githubusercontent.com/Partoo/blog/main/static/images/skillsbar.jpg
 ---
-### Background
-I need to organize the study notes in Notion into a technical blog, and finally chose Hugo from Hexo, Hugo, and vuepress, mainly because of its low learning cost and a lot of reference materials.
-### Process
-Basically, we can start simple development after reading the document. I refer to [Alex Bilz's](https://www.alexbilz.com) great theme - [Anatole](https://github.com/lxndrblz/anatole.git) and add a skills bar component:
+### 背景
+很久没有写技术博客了，这段时间想把在Notion中的一些笔记整理出来，于是在Hexo、Hugo、VuePress中进行了选择，最终决定使用Hugo。
+### 开发流程
+开发还是非常简单的，查看官方文档了解一下基本概念就可以上手了。我参考了 [Alex Bilz's](https://www.alexbilz.com) 的一个不错的主题 - [Anatole](https://github.com/lxndrblz/anatole.git) 并且自己加上一个Skills Bar的功能：
 
-1. First we need to create a json data and place it to "data" folder:
+1. 首先在“data”目录下创建一个json文件用来存放相关数据:
 ```json
 {
     "HTML": {
@@ -34,7 +35,7 @@ Basically, we can start simple development after reading the document. I refer t
     }
 }
 ```
-2. Add the snippet into about.md:
+2. 在 about.md 文件中添加下列代码:
 ```html
 <div class="post__content skills">
       <h1>{{ i18n "skills" }}</h1>
@@ -49,7 +50,7 @@ Basically, we can start simple development after reading the document. I refer t
       {{end}}
     </div>
 ```
-3. Style it:
+3. 样式文件:
 ```sass
 #skillbar {
     @include themed {
@@ -64,10 +65,8 @@ Basically, we can start simple development after reading the document. I refer t
     }
 }
 ```
-4. Make a "partial" to reuse:
-Simply snippet can use "shortcode", just easy to place the code snippet to "shortcode" folder then we can use it where the file in "content" folder. 
-We also can use "partial", it more functionally:
-Create a file named "skillbar.html" in "layouts/partials" folder and paste the code in step 2 to it: 
+4. 做成组件以重复使用:
+简单的调用可以使用"shortcode", 不过仅限于content目录下的文件，最好做成"partial"，在 layouts/partials 文件夹下创建一个"skillbar.html" 之后把第2步的代码复制进来: 
 ```html
 <div class="post__content skills">
       <h1>{{ i18n "skills" }}</h1>
@@ -82,9 +81,9 @@ Create a file named "skillbar.html" in "layouts/partials" folder and paste the c
       {{end}}
     </div>
 ```
-Then we can use it by `{{partial "skillsbar" .}}` anywhere.
-### Deploy
-There are many deployment schemes, using netify, github page, etc., I choose to use custom domain name + github page + cloud flare.
+这样就可以在任意地方通过 `{{partial "skillsbar" .}}` 进行调用了
+### 部署
+有很多种部署方案，netify/github pages 等等，我选择使用cloud flare + github pages，然后绑定自己的域名。这部分很简单，也都有相关的说明文档。
 
-### Summarize
-Hugo is highly mature and stable, but it is still necessary to use [Nuxt](https://nuxt.com/v3) to make some modern single-page applications.
+### 总结
+Hugo 是成熟度很高的一款产品，也非常稳定，不过如果想做一些例如SPA之类的现代页面还是使用 [Nuxt](https://nuxt.com/v3) 更好，这也是我日后的一个小目标。
