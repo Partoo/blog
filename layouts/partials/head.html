@@ -28,6 +28,14 @@
       {{- .Site.Params.description -}}
     {{ end }}"
   />
+  <meta
+    name="keywords"
+    content="{{ if .Params.keywords }}
+      {{- .Params.keywords -}}
+    {{ else }}
+      {{- .Site.Params.description -}}
+    {{ end }}"
+  />
   {{ if .Params.redirectUrl }}
     <meta http-equiv="refresh" content="1; url={{ .Params.redirectUrl }}" />
   {{ end }}
