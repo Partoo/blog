@@ -15,12 +15,9 @@ const setThemeStyle = (style) => {
 
 const switchTheme = () => {
   const currThemeStyle = getStoredThemeStyle();
-  // const e = new Event('themeChanged')
-  // document.dispatchEvent(e)
-  if (typeof DISQUS !== "undefined")
-    {
-        DISQUS.reset({ reload: true, config: disqus_config })
-    }
+  const e = new Event('themeChanged')
+  document.dispatchEvent(e)
+
   switch (currThemeStyle) {
     case 'light':
       setThemeStyle('dark');
