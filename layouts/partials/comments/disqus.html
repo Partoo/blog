@@ -22,7 +22,8 @@
     if (document.readyState == 'complete') {
         if (typeof DISQUS !== "undefined")
         {
-            DISQUS.reset({ reload: true, config: disqus_config });
+            DISQUS.reset({ reload: false, config: disqus_config });
+            console.log('changed 5th')
          }
     }
   });
