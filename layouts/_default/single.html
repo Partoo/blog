@@ -82,7 +82,7 @@
       {{- if .Site.DisqusShortname -}}
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
-          {{ template "_internal/disqus.html" . }}
+          {{ partial "comments/disqus.html" . }}
         </div>
       {{- end -}}
       {{- if .Site.Params.utterances.repo -}}

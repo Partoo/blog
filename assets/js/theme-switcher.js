@@ -15,6 +15,8 @@ const setThemeStyle = (style) => {
 
 const switchTheme = () => {
   const currThemeStyle = getStoredThemeStyle();
+  const e = new Event('themeChanged')
+  document.dispatchEvent(e)
   switch (currThemeStyle) {
     case 'light':
       setThemeStyle('dark');
