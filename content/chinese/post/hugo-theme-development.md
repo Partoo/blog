@@ -1,8 +1,8 @@
 ---
 author: Partoo
-title: Hugo主题开发心得
+title: 在Hugo主题中创建技能槽/skills-bar
 date: 2022-11-28
-description: Hugo主题开发心得
+description: 如何在Hugo主题中创建技能槽/skills-bar
 mermaid: true
 tags: 
     - hugo

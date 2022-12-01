@@ -1,6 +1,7 @@
 ---
-title: Hugo Theme Development
+title: How to make a skills-bar in your Hugo theme
 date: 2022-11-28
+description: How to make a skills-bar in your Hugo theme
 tags:
     - hugo
 categories:
