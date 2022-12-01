@@ -9,6 +9,7 @@ tags:
 categories:
     - 前端
 thumbnail: https://raw.githubusercontent.com/Partoo/blog/main/static/images/skillsbar.jpg
+thumbnailPosition: right
 ---
 ### 背景
 很久没有写技术博客了，这段时间想把在Notion中的一些笔记整理出来，于是在Hexo、Hugo、VuePress中进行了选择，最终决定使用Hugo。
