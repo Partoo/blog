@@ -2,13 +2,11 @@
 {{- if not $pc.Disable -}}
 {{ if .Site.DisqusShortname }}<div id="disqus_thread"></div>
 <script type="application/javascript">
-
     window.disqus_config = function () {
     {{with .Params.disqus_identifier }}this.page.identifier = '{{ . }}';{{end}}
     {{with .Params.disqus_title }}this.page.title = '{{ . }}';{{end}}
     {{with .Params.disqus_url }}this.page.url = '{{ . | html  }}';{{end}}
     };
-    
     (function() {
         if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
             document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
@@ -18,15 +16,6 @@
         s.src = '//' + {{ .Site.DisqusShortname }} + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
-        document.addEventListener('themeChanged', function (e) { 
-    if (document.readyState == 'complete') {
-        if (typeof DISQUS !== "undefined")
-        {
-            DISQUS.reset({ reload: false, config: disqus_config });
-            console.log('changed 5th')
-         }
-    }
-  });
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
