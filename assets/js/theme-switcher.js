@@ -19,7 +19,7 @@ const switchTheme = () => {
   // document.dispatchEvent(e)
   if (typeof DISQUS !== "undefined")
     {
-        DISQUS.reset({ reload: true });
+        DISQUS.reset({ reload: true, config: disqus_config })
     }
   switch (currThemeStyle) {
     case 'light':
