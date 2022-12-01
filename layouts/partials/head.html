@@ -6,11 +6,9 @@
       {{ end }}
       {{- .Site.Params.author -}}
     {{ else }}
-      {{- .Site.Params.author -}}{{ with .Title }}
+      {{- .Site.Params.title -}}
         |
-        {{ . }}
-      {{ end }}
-
+        {{ .Site.Params.author }}
     {{ end }}
 
   </title>
@@ -28,14 +26,9 @@
       {{- .Site.Params.description -}}
     {{ end }}"
   />
-  <meta
-    name="keywords"
-    content="{{ if .Params.keywords }}
-      {{- .Params.keywords -}}
-    {{ else }}
-      {{- .Site.Params.description -}}
-    {{ end }}"
-  />
+  {{ if isset .Site.Params "keywords" }}
+  <meta name="keywords" content="{{- .Site.Params.keywords -}}" />
+  {{ end }}
   {{ if .Params.redirectUrl }}
     <meta http-equiv="refresh" content="1; url={{ .Params.redirectUrl }}" />
   {{ end }}

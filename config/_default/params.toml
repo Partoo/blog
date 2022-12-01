@@ -3,7 +3,7 @@ author = "Partoo"
 #copyright = "2020-2021"
 description = "I'm a full-stack developer.<br>君子不器 博观约取"
 profilePicture = "images/avatar.png"
-keywords = "Partoo,程序员，全栈开发，taoblog，fullstack"
+keywords = "Partoo,全栈开发,talktao,论道,说道"
 favicon = "favicons/"
 displayMode = "dark"
 # example ["css/custom.css"]
