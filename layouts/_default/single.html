@@ -6,9 +6,11 @@
       animated fadeInDown
     {{ end }}"
   >
-    {{ if .Params.thumbnail }}
+  {{ $thumbnail := .Params.thumbnail }}
+  {{ $thumbnailPos := .Params.thumbnailPosition }}
+    {{ if $thumbnail }}
       <div class="post__thumbnail-wrapper">
-        <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
+        <img {{if $thumbnailPos}} style="object-position:{{$thumbnailPos}}" {{end}} class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
       </div>
     {{ end }}
     <div class="post__content">

@@ -6,6 +6,7 @@ tags:
 categories:
     - front
 thumbnail: https://raw.githubusercontent.com/Partoo/blog/main/static/images/skillsbar.jpg
+thumbnailPosition: center
 ---
 ### Background
 I need to organize the study notes in Notion into a technical blog, and finally chose Hugo from Hexo, Hugo, and vuepress, mainly because of its low learning cost and a lot of reference materials.
