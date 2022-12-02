@@ -1,5 +1,5 @@
 ---
-title: Mastering Vue 3
+title: Series Part 1
 date: 2022-12-02
 description: Mastering Vue 3.x, Nuxt 3.x, Vite and Pania
 categories:
