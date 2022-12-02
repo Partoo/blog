@@ -56,7 +56,7 @@
           <p>{{ .Summary | markdownify }}</p>
         {{ end }}
         <!-- add read more -->
-        {{- if and (.Truncated) (.Site.Params.readMore) -}}
+        {{- if .Site.Params.readMore -}}
           <a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>
         {{- end -}}
       </div>
