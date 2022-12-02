@@ -2,7 +2,7 @@
   margin: 30px;
   .post__hr {
     @include themed() {
-      border-bottom: t('border');
+      border-bottom: dotted 1px t('primary');
     }
   }
   @include themed() {

@@ -51,5 +51,8 @@ other = "Update"
 [series_posts]
 other = "Posts in this series"
 
+[this_post]
+other = "This Post"
+
 [skills]
 other = "Programming Skills"

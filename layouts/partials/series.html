@@ -1,9 +1,54 @@
 {{ $related := where .Site.RegularPages ".Params.series" "intersect" .Params.series }}
 
+<div id="series" class="expanded">
+  <div id="bar">
+    <a id="post_list_btn" class="button"><i id="button_icon" class="fa-solid fa-chevron-right"></i></a>
+  </div>
+  <div class="post_list" id="post_list">
+   <h3>{{ i18n "series_posts" }}</h3>
+   <ul>
+    {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
+    {{ if eq $post.Permalink $.Page.Permalink }}
+    <li class="list-group-item active">
+      {{ add $num 1 }}: {{i18n "this_post"}}
+    </li>
+    {{ else }}
+    <li class="list-group-item">
+      <a href="{{$post.Permalink}}">
+        {{ add $num 1 }}: {{ $post.Params.title}}
+      </a>
+    </li>
+    {{end}}
+    {{end}}
+  </ul> 
+</div>
+</div>
+<div class="post__hr"></div>
+<script type="text/javascript">
+  const do_post_list = () => {
+    var list_width =  document.getElementById('post_list').offsetWidth
+    var post_list = document.getElementById('post_list')
+    var series_box = document.getElementById('series')
+    var icon = document.getElementById('button_icon')
 
-<h3>{{ i18n "series_posts" }}</h3>
-<ul>
-  {{ range $related }}
-    <li><a href="{{ .Page.RelPermalink }}">{{ title .Page.Title }}</a></li>
-  {{ end }}
-</ul>
+    if (series_box.classList.contains('expanded')) {
+      series_box.classList.remove('expanded')
+      series_box.classList.add('collapsed')
+      series_box.style.right = "-" + post_list.offsetWidth + "px"
+      icon.style.transform = "scale(-1, 1)"
+    } else {
+      series_box.classList.remove('collapsed')
+      series_box.classList.add('expanded')
+      series_box.style.right = 0
+      icon.style.transform = "scale(1, -1)"
+    }
+  }
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      document.getElementById('bar').addEventListener('click', do_post_list, false);
+    },
+    false,
+    )
+
+  </script>

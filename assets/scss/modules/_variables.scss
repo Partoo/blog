@@ -2,13 +2,13 @@ $accent--lightmode: #e2dfdc;
 $primary--lightmode: #642d05;
 $primary-light--lightmode: #cdc0a8;
 $primary-lighter--lightmode: #c0b7a1;
-$shadow--lightmode: 0 8px 16px rgba(10, 10, 10, 0.1);
+$shadow--lightmode: 0 0 5px 2px rgba(10, 10, 10, 0.1);
 
 $accent--darkmode: #1d2129;
 $primary--darkmode: #c2ac8d;
 $primary-light--darkmode: #6b665c;
 $primary-lighter--darkmode: #958b6e;
-$shadow--darkmode: 0 8px 16px rgba(226, 226, 226, 0.1);
+$shadow--darkmode: 0 0 8px 3px rgba(0,0,0,.3);
 
 $warning--lightmode: #ffc107;
 $info--lightmode: #0998ae;
@@ -29,3 +29,5 @@ $content-max-width: calc(#{$body-max-width} * #{$content-ratio});
 $sidebar-max-width: calc(#{$body-max-width} - #{$content-max-width});
 $content-width: calc(#{$content-ratio} * 100%);
 $sidebar-width: calc(#{$sidebar-ratio} * 100%);
+
+$header-height: 70px;

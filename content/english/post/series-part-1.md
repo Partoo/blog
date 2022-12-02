@@ -1,10 +1,14 @@
 ---
-author: Hugo Authors
-title: Series Part 1
-date: 2021-08-14
-description: A brief guide to how to setup series part 1
+title: Mastering Vue 3
+date: 2022-12-02
+description: Mastering Vue 3.x, Nuxt 3.x, Vite and Pania
+categories:
+  - front
+tag:
+  - vue
+  - nuxt
 series:
-  - series-setup
+  - mastering-vue3
 ---
 
 In this first part of the series we'll show you how to create a series
