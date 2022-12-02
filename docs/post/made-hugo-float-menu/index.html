@@ -1,0 +1,229 @@
+<!doctype html><html dir=ltr lang=en data-theme=dark class="html theme--dark"><head><title>Talk Tao|
+Partoo</title><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=author content="Partoo"><meta name=description content="Technical articles often belong to a series, and related series of articles need to be displayed for easy browsing when reading these articles. Building a floating menu is the best option."><meta name=keywords content="Partoo,全栈开发,talktao,论道,说道"><link rel=stylesheet href=/scss/main.min.29c05c56cf17027b5cd864ec382872ed3e2e406977bbe892e943ea613c540c53.css integrity="sha256-KcBcVs8XAntc2GTsOChy7T4uQGl3u+iS6UPqYTxUDFM=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/css/markupHighlight.min.863aef1cf847aa69aa9964477f7c49ea7399346958e08ec8bb874a3a2894266b.css integrity="sha256-hjrvHPhHqmmqmWRHf3xJ6nOZNGlY4I7Iu4dKOiiUJms=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc=" crossorigin=anonymous type=text/css><link rel="shortcut icon" href=/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=canonical href=https://www.talktao.cc/post/made-hugo-float-menu/><script type=text/javascript src=/js/header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js integrity="sha256-+RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/theme-switcher.min.d75dfe1e1386c4b1282abef3c7efb5eac612a5fe9dd92aafbcaba74026bb6c14.js integrity="sha256-113+HhOGxLEoKr7zx++16sYSpf6d2SqvvKunQCa7bBQ=" crossorigin=anonymous></script><meta property="og:title" content="How to Create A Hugo Float Menu"><meta property="og:description" content="Technical articles often belong to a series, and related series of articles need to be displayed for easy browsing when reading these articles. Building a floating menu is the best option."><meta property="og:type" content="article"><meta property="og:url" content="https://www.talktao.cc/post/made-hugo-float-menu/"><meta property="og:image" content="https://www.talktao.cc/images/site-feature-image.png"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-12-03T01:46:49+08:00"><meta property="article:modified_time" content="2022-12-03T01:46:49+08:00"><meta property="og:site_name" content="Talk Tao"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"How to Create A Hugo Float Menu","headline":"How to Create A Hugo Float Menu","alternativeHeadline":"","description":"
+      Technical articles often belong to a series, and related series of articles need to be displayed for easy browsing when reading these articles. Building a floating menu is the best option.
+
+
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.talktao.cc\/post\/made-hugo-float-menu\/"},"author":{"@type":"Person","name":"Partoo"},"creator":{"@type":"Person","name":"Partoo"},"accountablePerson":{"@type":"Person","name":"Partoo"},"copyrightHolder":{"@type":"Person","name":"Partoo"},"copyrightYear":"2022","dateCreated":"2022-12-03T01:46:49.00Z","datePublished":"2022-12-03T01:46:49.00Z","dateModified":"2022-12-03T01:46:49.00Z","publisher":{"@type":"Organization","name":"Partoo","url":"https://www.talktao.cc","logo":{"@type":"ImageObject","url":"https:\/\/www.talktao.cc\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://www.talktao.cc/images/site-feature-image.png"],"url":"https:\/\/www.talktao.cc\/post\/made-hugo-float-menu\/","wordCount":"531","genre":["front"],"keywords":["hugo"]}</script></head><body class=body><div class=wrapper><aside class="wrapper__sidebar wrapper__sidebar--hidden"><div class="sidebar
+."><div class=sidebar__content><div class=sidebar__introduction><img class=sidebar__introduction-profileimage src=/images/avatar.png alt="profile picture"><div class=sidebar__introduction-title><a href=/>Talk Tao</a></div><div class=sidebar__introduction-description><p>I'm a full-stack developer.<br>君子不器 博观约取</p></div></div><ul class=sidebar__list><li class=sidebar__list-item><a href target=_blank rel="noopener me" aria-label title><i class=fa-2x aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://github.com/Partoo target=_blank rel="noopener me" aria-label=GitHub title=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://www.twitter.com/handanyea target=_blank rel="noopener me" aria-label=twitter title=twitter><i class="fab fa-twitter fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=mailto:partoo@live.cn target=_blank rel="noopener me" aria-label=e-mail title=e-mail><i class="fas fa-envelope fa-2x" aria-hidden=true></i></a></li></ul></div><footer class="footer footer__sidebar"><ul class=footer__list><li class=footer__item>&copy;
+Partoo
+2022</li><li class=footer__item><a href=https://www.github.com/Partoo/blog>Partoo</a> theme based on <a href=https://www.gohugo.io>Hugo</a></li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css integrity=sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js integrity=sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js integrity=sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L57MVQGWSV"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-L57MVQGWSV",{anonymize_ip:!1})}</script></div></aside><main class="wrapper__main wrapper__main--fullscreen"><header class=header><div class=.><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true class=navbar-burger__line></span>
+<span aria-hidden=true class=navbar-burger__line></span>
+<span aria-hidden=true class=navbar-burger__line></span></a><nav class=nav><ul class=nav__list id=navMenu><li class=nav__list-item><a href=/ title>Home</a></li><li class=nav__list-item><a href=/post/ title>Posts</a></li><li class=nav__list-item><a href=/portfolio/ title>Portfolio</a></li><li class=nav__list-item><a href=/about/ title>About</a></li></ul><ul class="nav__list nav__list--end"><li class=nav__list-item><div class=themeswitch><a title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></li></ul></nav></div></header><div class="post
+."><div class=post__content><h1>How to Create a Hugo Float Menu</h1><ul class=post__meta><li class=post__meta-item><em class="fas fa-calendar-day post__meta-icon"></em>
+<span class=post__meta-text>3/12/2022</span></li><li class=post__meta-item><em class="fas fa-stopwatch post__meta-icon"></em>
+<span class=post__meta-text>3-minute read</span></li></ul><div class=post__hr></div><h3 id=background>Background</h3><p>Technical articles often belong to a series, and related series of articles need to be displayed for easy browsing when reading these articles. Building a floating menu is the best option.
+The effect like <a href=/post/series-part-1/>here</a>, you will see the menu floats nicely on the right side of the page.</p><h3 id=process>Process</h3><ol><li>First, we need to understand the background of Series in Hugo. &ldquo;Series is an array of series this page belongs to, as a subset of the series taxonomy; used by the opengraph internal template to populate og:see_also&rdquo;. That means we can use front matter to defin it.</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#ff79c6>title</span>: My Title
+</span></span><span style=display:flex><span><span style=color:#ff79c6>date</span>: 2022-12-02
+</span></span><span style=display:flex><span><span style=color:#ff79c6>categories</span>:
+</span></span><span style=display:flex><span>  - front
+</span></span><span style=display:flex><span><span style=color:#ff79c6>series</span>:
+</span></span><span style=display:flex><span>  - mastering-vue3
+</span></span><span style=display:flex><span>---
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Then, we create a partial named &ldquo;series.html&rdquo;:</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>{{ $related := where .Site.RegularPages &#34;.Params.series&#34; &#34;intersect&#34; .Params.series }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#ff79c6>div</span> <span style=color:#50fa7b>id</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;series&#34;</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;expanded&#34;</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#ff79c6>div</span> <span style=color:#50fa7b>id</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;bar&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>id</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;post_list_btn&#34;</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;button&#34;</span>&gt;&lt;<span style=color:#ff79c6>i</span> <span style=color:#50fa7b>id</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;button_icon&#34;</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;fa-solid fa-chevron-right&#34;</span>&gt;&lt;/<span style=color:#ff79c6>i</span>&gt;&lt;/<span style=color:#ff79c6>a</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#ff79c6>div</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#ff79c6>div</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;post_list&#34;</span> <span style=color:#50fa7b>id</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;post_list&#34;</span>&gt;
+</span></span><span style=display:flex><span>   &lt;<span style=color:#ff79c6>h3</span>&gt;{{ i18n &#34;series_posts&#34; }}&lt;/<span style=color:#ff79c6>h3</span>&gt;
+</span></span><span style=display:flex><span>   &lt;<span style=color:#ff79c6>ul</span>&gt;
+</span></span><span style=display:flex><span>    {{ range $num,$post := (index .Site.Taxonomies.series (index .Params.series 0 | urlize)).Pages.ByDate }}
+</span></span><span style=display:flex><span>    {{ if eq $post.Permalink $.Page.Permalink }}
+</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>li</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;list-group-item active&#34;</span>&gt;
+</span></span><span style=display:flex><span>      {{ add $num 1 }}: {{i18n &#34;this_post&#34;}}
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#ff79c6>li</span>&gt;
+</span></span><span style=display:flex><span>    {{ else }}
+</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>li</span> <span style=color:#50fa7b>class</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;list-group-item&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#ff79c6>a</span> <span style=color:#50fa7b>href</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;{{$post.Permalink}}&#34;</span>&gt;
+</span></span><span style=display:flex><span>        {{ add $num 1 }}: {{ $post.Params.title}}
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#ff79c6>a</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#ff79c6>li</span>&gt;
+</span></span><span style=display:flex><span>    {{end}}
+</span></span><span style=display:flex><span>    {{end}}
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#ff79c6>ul</span>&gt; 
+</span></span><span style=display:flex><span>&lt;/<span style=color:#ff79c6>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#ff79c6>div</span>&gt;
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Now let&rsquo;s style it.</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sass data-lang=sass><span style=display:flex><span>#series {
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>position</span><span style=color:#ff79c6>:</span> fixed;
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>display</span><span style=color:#ff79c6>:</span> flex;
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>align-items</span><span style=color:#ff79c6>:</span> center;
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>right</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>top</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>35</span><span style=color:#8be9fd>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>transition</span><span style=color:#ff79c6>:</span> right <span style=color:#bd93f9>.5</span><span style=color:#8be9fd>s</span>;
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>ul</span> {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>list-style</span><span style=color:#ff79c6>:</span> none;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>padding</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  #bar {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>background-color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;success&#39;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>border-radius</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>0</span> <span style=color:#bd93f9>5</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>5</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>padding</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>3</span><span style=color:#8be9fd>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>color</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>#fff</span>;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>cursor</span><span style=color:#ff79c6>:</span> pointer;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>height</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>30</span><span style=color:#8be9fd>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>display</span><span style=color:#ff79c6>:</span> flex;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>justify-content</span><span style=color:#ff79c6>:</span> center;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>align-items</span><span style=color:#ff79c6>:</span> center;
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>a</span> {
+</span></span><span style=display:flex><span>      <span style=color:#50fa7b>color</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>#fff</span>;
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>&amp;</span>:hover {
+</span></span><span style=display:flex><span>        <span style=color:#50fa7b>color</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>#fff</span> <span style=color:#8be9fd;font-style:italic>!important</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#50fa7b>.post_list</span> {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>margin-left</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>8</span><span style=color:#8be9fd>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>padding</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>5</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>10</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>20</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>5</span><span style=color:#8be9fd>px</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>@</span><span style=color:#ff79c6>include</span> <span style=color:#ff79c6>themed</span><span style=color:#ff79c6>()</span> {
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>box-shadow</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;shadow&#39;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>border-color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;primary-light&#39;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>border-radius</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>10</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>0</span> <span style=color:#bd93f9>0</span> <span style=color:#bd93f9>10</span><span style=color:#8be9fd>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>background-color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>darken</span>(<span style=color:#8be9fd;font-style:italic>$color</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;accent&#39;</span>)<span style=color:#ff79c6>,</span> <span style=color:#8be9fd;font-style:italic>$amount</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>background-image</span><span style=color:#ff79c6>:</span> <span style=color:#50fa7b>linear-gradient</span>(<span style=color:#bd93f9>45</span><span style=color:#8be9fd>deg</span><span style=color:#ff79c6>,</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;accent&#39;</span>) <span style=color:#bd93f9>25</span><span style=color:#8be9fd>%</span><span style=color:#ff79c6>,</span> transparent <span style=color:#bd93f9>25</span><span style=color:#8be9fd>%</span><span style=color:#ff79c6>,</span> transparent <span style=color:#bd93f9>75</span><span style=color:#8be9fd>%</span><span style=color:#ff79c6>,</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;accent&#39;</span>) <span style=color:#bd93f9>75</span><span style=color:#8be9fd>%</span><span style=color:#ff79c6>,</span> <span style=color:#50fa7b>t</span>(<span style=color:#f1fa8c>&#39;accent&#39;</span>))<span style=color:#ff79c6>,</span>
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>linear-gradient</span><span style=color:#ff79c6>(</span><span style=color:#ff79c6>-45deg</span><span style=color:#ff79c6>,</span> <span style=color:#ff79c6>t</span><span style=color:#ff79c6>(</span><span style=color:#f1fa8c>&#39;accent&#39;</span><span style=color:#ff79c6>)</span> <span style=color:#ff79c6>25</span>%<span style=color:#ff79c6>,</span> <span style=color:#ff79c6>transparent</span> <span style=color:#ff79c6>25</span>%<span style=color:#ff79c6>,</span> <span style=color:#ff79c6>transparent</span> <span style=color:#ff79c6>75</span>%<span style=color:#ff79c6>,</span> <span style=color:#ff79c6>t</span><span style=color:#ff79c6>(</span><span style=color:#f1fa8c>&#39;accent&#39;</span><span style=color:#ff79c6>)</span> <span style=color:#ff79c6>75</span>%<span style=color:#ff79c6>,</span> <span style=color:#ff79c6>t</span><span style=color:#ff79c6>(</span><span style=color:#f1fa8c>&#39;accent&#39;</span><span style=color:#ff79c6>));</span>
+</span></span><span style=display:flex><span>    <span style=color:#50fa7b>background-size</span><span style=color:#ff79c6>:</span> <span style=color:#bd93f9>60</span><span style=color:#8be9fd>px</span> <span style=color:#bd93f9>60</span><span style=color:#8be9fd>px</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Finally wrote the javascript into html file:</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#ff79c6>&lt;</span>script type<span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;text/javascript&#34;</span><span style=color:#ff79c6>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>const</span> do_post_list <span style=color:#ff79c6>=</span> () =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>var</span> post_list <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>document</span>.getElementById(<span style=color:#f1fa8c>&#39;post_list&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>var</span> list_width <span style=color:#ff79c6>=</span> post_list.offsetWidth
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>var</span> series_box <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>document</span>.getElementById(<span style=color:#f1fa8c>&#39;series&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#8be9fd;font-style:italic>var</span> icon <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>document</span>.getElementById(<span style=color:#f1fa8c>&#39;button_icon&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4>// Actually, we can use localstorage to record the expanded/collapsed state.
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>    <span style=color:#ff79c6>if</span> (series_box.classList.contains(<span style=color:#f1fa8c>&#39;expanded&#39;</span>)) {
+</span></span><span style=display:flex><span>      series_box.classList.remove(<span style=color:#f1fa8c>&#39;expanded&#39;</span>)
+</span></span><span style=display:flex><span>      series_box.classList.add(<span style=color:#f1fa8c>&#39;collapsed&#39;</span>)
+</span></span><span style=display:flex><span>      series_box.style.right <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;-&#34;</span> <span style=color:#ff79c6>+</span> post_list.offsetWidth <span style=color:#ff79c6>+</span> <span style=color:#f1fa8c>&#34;px&#34;</span>
+</span></span><span style=display:flex><span>      icon.style.transform <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;scale(-1, 1)&#34;</span>
+</span></span><span style=display:flex><span>    } <span style=color:#ff79c6>else</span> {
+</span></span><span style=display:flex><span>      series_box.classList.remove(<span style=color:#f1fa8c>&#39;collapsed&#39;</span>)
+</span></span><span style=display:flex><span>      series_box.classList.add(<span style=color:#f1fa8c>&#39;expanded&#39;</span>)
+</span></span><span style=display:flex><span>      series_box.style.right <span style=color:#ff79c6>=</span> <span style=color:#bd93f9>0</span>
+</span></span><span style=display:flex><span>      icon.style.transform <span style=color:#ff79c6>=</span> <span style=color:#f1fa8c>&#34;scale(1, -1)&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#8be9fd;font-style:italic>document</span>.addEventListener(
+</span></span><span style=display:flex><span>    <span style=color:#f1fa8c>&#39;DOMContentLoaded&#39;</span>,
+</span></span><span style=display:flex><span>    () =&gt; {
+</span></span><span style=display:flex><span>      <span style=color:#8be9fd;font-style:italic>document</span>.getElementById(<span style=color:#f1fa8c>&#39;bar&#39;</span>).addEventListener(<span style=color:#f1fa8c>&#39;click&#39;</span>, do_post_list, <span style=color:#ff79c6>false</span>);
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&lt;</span>/script&gt;
+</span></span></code></pre></td></tr></table></div></div><p>As you can see, we built the HTML and use javascript to manipulate the DOM. When we clicking the button, the menu can be collapsed or expanded as we want.</p><p>Full code <a href=https://www.github.com/Partoo/blog>Here</a></p><h3>Related Posts</h3><ul><li><a href=/post/disqus-theme-auto-switch/>Make Disqus Auto-Switch theme</a></li><li><a href=/post/hugo-theme-development/>How to make a skills-bar in your Hugo theme</a></li><li><a href=/post/series-part-1/>Mastering Vue 3</a></li></ul></div><div class=post__footer><span><a class=category href=/categories/front/>front</a></span>
+<span><a class=tag href=/tags/hugo/>hugo</a></span></div><div id=comment><h2>comments</h2><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//talktao.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
+Partoo
+2022</li><li class=footer__item><a href=https://www.github.com/Partoo/blog>Partoo</a> theme based on <a href=https://www.gohugo.io>Hugo</a></li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css integrity=sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js integrity=sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js integrity=sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L57MVQGWSV"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-L57MVQGWSV",{anonymize_ip:!1})}</script></body></html>

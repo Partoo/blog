@@ -4,17 +4,13 @@ date: 2022-12-02
 description: Mastering Vue 3.x, Nuxt 3.x, Vite and Pania
 categories:
   - front
-tag:
+tags:
   - vue
   - nuxt
+summary: customize summary
 series:
   - mastering-vue3
 ---
-
-In this first part of the series we'll show you how to create a series
-
-<!--more-->
-
 As a first step we need to add series as a taxonomy. We can do this by editing the `config.toml`.  
 Note: We always need to define the existing taxonomies as well.
 
