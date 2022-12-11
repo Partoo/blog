@@ -1,17 +1,15 @@
 <!doctype html><html dir=ltr lang=en data-theme=dark class="html theme--dark"><head><title>Talk Tao|
 Partoo</title><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=author content="Partoo"><meta name=description content="I'm a full-stack developer.<br>君子不器 博观约取"><meta name=keywords content="Partoo,全栈开发,talktao,论道,说道"><link rel=stylesheet href=/scss/main.min.29c05c56cf17027b5cd864ec382872ed3e2e406977bbe892e943ea613c540c53.css integrity="sha256-KcBcVs8XAntc2GTsOChy7T4uQGl3u+iS6UPqYTxUDFM=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/css/markupHighlight.min.863aef1cf847aa69aa9964477f7c49ea7399346958e08ec8bb874a3a2894266b.css integrity="sha256-hjrvHPhHqmmqmWRHf3xJ6nOZNGlY4I7Iu4dKOiiUJms=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs=" crossorigin=anonymous type=text/css><link rel=stylesheet href=/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc=" crossorigin=anonymous type=text/css><link rel="shortcut icon" href=/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=canonical href=https://www.talktao.cc/post/figure-shortcode/><script type=text/javascript src=/js/header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js integrity="sha256-+RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI=" crossorigin=anonymous></script>
-<script type=text/javascript src=/js/theme-switcher.min.d75dfe1e1386c4b1282abef3c7efb5eac612a5fe9dd92aafbcaba74026bb6c14.js integrity="sha256-113+HhOGxLEoKr7zx++16sYSpf6d2SqvvKunQCa7bBQ=" crossorigin=anonymous></script><meta property="og:title" content="The Figure Shortcode"><meta property="og:description" content="Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images. Documentations can be found here:
-https://gohugo.io/content-management/shortcodes/#figure
-This theme has 3 CSS classes made for figure elements:
-big: images will break the width limit of main content area. left: images will float to the left."><meta property="og:type" content="article"><meta property="og:url" content="https://www.talktao.cc/post/figure-shortcode/"><meta property="og:image" content="https://www.talktao.cc/images/site-feature-image.png"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-03-13T21:47:41+00:00"><meta property="article:modified_time" content="2021-03-13T21:47:41+00:00"><meta property="og:site_name" content="Talk Tao"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"The Figure Shortcode","headline":"The Figure Shortcode","alternativeHeadline":"","description":"
+<script type=text/javascript src=/js/theme-switcher.min.d75dfe1e1386c4b1282abef3c7efb5eac612a5fe9dd92aafbcaba74026bb6c14.js integrity="sha256-113+HhOGxLEoKr7zx++16sYSpf6d2SqvvKunQCa7bBQ=" crossorigin=anonymous></script><meta property="og:title" content="API DEMO"><meta property="og:description" content="韩你看一下大体的格式，这是登录验证及获取登录后信息部分的，比如所有请求返还的键名还有错误码你可以定一下，我现在这里按若依每个请求都有一个 code 放 状态码， 然后 msg 放相关提示
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 1."><meta property="og:type" content="article"><meta property="og:url" content="https://www.talktao.cc/post/figure-shortcode/"><meta property="og:image" content="https://www.talktao.cc/images/site-feature-image.png"><meta property="article:section" content="post"><meta property="article:published_time" content="2022-12-11T00:00:00+00:00"><meta property="article:modified_time" content="2022-12-11T00:00:00+00:00"><meta property="og:site_name" content="Talk Tao"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","articleSection":"post","name":"API DEMO","headline":"API DEMO","alternativeHeadline":"","description":"
       
-        Hugo has figure shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images. Documentations can be found here:\nhttps:\/\/gohugo.io\/content-management\/shortcodes\/#figure\nThis theme has 3 CSS classes made for figure elements:\nbig: images will break the width limit of main content area. left: images will float to the left.
+        韩你看一下大体的格式，这是登录验证及获取登录后信息部分的，比如所有请求返还的键名还有错误码你可以定一下，我现在这里按若依每个请求都有一个 code 放 状态码， 然后 msg 放相关提示\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 1.
 
 
       
 
 
-    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.talktao.cc\/post\/figure-shortcode\/"},"author":{"@type":"Person","name":"Partoo"},"creator":{"@type":"Person","name":"Partoo"},"accountablePerson":{"@type":"Person","name":"Partoo"},"copyrightHolder":{"@type":"Person","name":"Partoo"},"copyrightYear":"2021","dateCreated":"2021-03-13T21:47:41.00Z","datePublished":"2021-03-13T21:47:41.00Z","dateModified":"2021-03-13T21:47:41.00Z","publisher":{"@type":"Organization","name":"Partoo","url":"https://www.talktao.cc","logo":{"@type":"ImageObject","url":"https:\/\/www.talktao.cc\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://www.talktao.cc/images/site-feature-image.png"],"url":"https:\/\/www.talktao.cc\/post\/figure-shortcode\/","wordCount":"909","genre":[],"keywords":["demo","shortcode"]}</script></head><body class=body><div class=wrapper><aside class="wrapper__sidebar wrapper__sidebar--hidden"><div class="sidebar
+    ","inLanguage":"en-us","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.talktao.cc\/post\/figure-shortcode\/"},"author":{"@type":"Person","name":"Partoo"},"creator":{"@type":"Person","name":"Partoo"},"accountablePerson":{"@type":"Person","name":"Partoo"},"copyrightHolder":{"@type":"Person","name":"Partoo"},"copyrightYear":"2022","dateCreated":"2022-12-11T00:00:00.00Z","datePublished":"2022-12-11T00:00:00.00Z","dateModified":"2022-12-11T00:00:00.00Z","publisher":{"@type":"Organization","name":"Partoo","url":"https://www.talktao.cc","logo":{"@type":"ImageObject","url":"https:\/\/www.talktao.cc\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":["https://www.talktao.cc/images/site-feature-image.png"],"url":"https:\/\/www.talktao.cc\/post\/figure-shortcode\/","wordCount":"1167","genre":[],"keywords":[]}</script></head><body class=body><div class=wrapper><aside class="wrapper__sidebar wrapper__sidebar--hidden"><div class="sidebar
 ."><div class=sidebar__content><div class=sidebar__introduction><img class=sidebar__introduction-profileimage src=/images/avatar.png alt="profile picture"><div class=sidebar__introduction-title><a href=/>Talk Tao</a></div><div class=sidebar__introduction-description><p>I'm a full-stack developer.<br>君子不器 博观约取</p></div></div><ul class=sidebar__list><li class=sidebar__list-item><a href target=_blank rel="noopener me" aria-label title><i class=fa-2x aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://github.com/Partoo target=_blank rel="noopener me" aria-label=GitHub title=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://www.twitter.com/handanyea target=_blank rel="noopener me" aria-label=twitter title=twitter><i class="fab fa-twitter fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=mailto:partoo@live.cn target=_blank rel="noopener me" aria-label=e-mail title=e-mail><i class="fas fa-envelope fa-2x" aria-hidden=true></i></a></li></ul></div><footer class="footer footer__sidebar"><ul class=footer__list><li class=footer__item>&copy;
 Partoo
 2022</li><li class=footer__item><a href=https://www.github.com/Partoo/blog>Partoo</a> theme based on <a href=https://www.gohugo.io>Hugo</a></li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css integrity=sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js integrity=sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js integrity=sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v crossorigin=anonymous onload=renderMathInElement(document.body)></script>
@@ -19,9 +17,849 @@ Partoo
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-L57MVQGWSV",{anonymize_ip:!1})}</script></div></aside><main class="wrapper__main wrapper__main--fullscreen"><header class=header><div class=.><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true class=navbar-burger__line></span>
 <span aria-hidden=true class=navbar-burger__line></span>
 <span aria-hidden=true class=navbar-burger__line></span></a><nav class=nav><ul class=nav__list id=navMenu><li class=nav__list-item><a href=/ title>Home</a></li><li class=nav__list-item><a href=/post/ title>Posts</a></li><li class=nav__list-item><a href=/portfolio/ title>Portfolio</a></li><li class=nav__list-item><a href=/about/ title>About</a></li></ul><ul class="nav__list nav__list--end"><li class=nav__list-item><div class=themeswitch><a title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></li></ul></nav></div></header><div class="post
-."><div class=post__content><h1>The Figure Shortcode</h1><ul class=post__meta><li class=post__meta-item><em class="fas fa-calendar-day post__meta-icon"></em>
-<span class=post__meta-text>13/3/2021</span></li><li class=post__meta-item><em class="fas fa-stopwatch post__meta-icon"></em>
-<span class=post__meta-text>5-minute read</span></li></ul><div class=post__hr></div><p>Hugo has <code>figure</code> shortcode built-in, so you can easily add figure captions or hyperlink rel attributes to images. Documentations can be found here:</p><p><a href=https://gohugo.io/content-management/shortcodes/#figure>https://gohugo.io/content-management/shortcodes/#figure</a></p><p>This theme has 3 CSS classes made for figure elements:</p><ul><li><code>big</code>: images will break the width limit of main content area.</li><li><code>left</code>: images will float to the left.</li><li><code>right</code>: images will float to the right.</li></ul><p>If a figure has no class set, the image will behave just like a normal markdown image: <code>![]()</code>.</p><p>Here are some examples; please be aware that these styles only take effect when the page width is over 1300px.</p><figure><img src=https://via.placeholder.com/1600x800 alt=image><figcaption><p>figure-normal (without any classes)</p></figcaption></figure><p>Pellentesque posuere sem nec nunc varius, id hendrerit arcu consequat. Maecenas commodo, sapien ut gravida porttitor, dolor risus facilisis enim, eget pharetra nibh nisl porttitor sapien. Proin finibus elementum ligula sit amet hendrerit. Praesent et erat sodales ante accumsan pharetra non eu nulla. Sed vehicula consequat lorem, a fermentum ante faucibus quis. Aliquam erat volutpat. In vitae tincidunt dui. Proin sit amet ligula sodales, elementum tortor et, venenatis sem. Maecenas non nisl erat. Curabitur nec velit eros. Ut cursus lacus nisi, non pretium libero euismod et. Fusce luctus in nisi quis sollicitudin. Aenean nec blandit ligula. Duis ac felis lorem. Proin tellus tellus, dictum nec tempus sit amet, venenatis ac felis. Sed in pharetra nulla, non mollis sem.</p><figure class=big><img src=https://via.placeholder.com/1600x800 alt=image><figcaption><p>figure-big</p></figcaption></figure><p>Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p><figure class=medium><img src=https://via.placeholder.com/1600x800 alt=image><figcaption><p>figure-medium</p></figcaption></figure><p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.</p><figure class=small><img src=https://via.placeholder.com/1600x800 alt=image><figcaption><p>figure-small</p></figcaption></figure><p>Pellentesque posuere sem nec nunc varius, id hendrerit arcu consequat. Maecenas commodo, sapien ut gravida porttitor, dolor risus facilisis enim, eget pharetra nibh nisl porttitor sapien. Proin finibus elementum ligula sit amet hendrerit. Praesent et erat sodales ante accumsan pharetra non eu nulla. Sed vehicula consequat lorem, a fermentum ante faucibus quis. Aliquam erat volutpat. In vitae tincidunt dui. Proin sit amet ligula sodales, elementum tortor et, venenatis sem. Maecenas non nisl erat. Curabitur nec velit eros. Ut cursus lacus nisi, non pretium libero euismod et. Fusce luctus in nisi quis sollicitudin. Aenean nec blandit ligula. Duis ac felis lorem. Proin tellus tellus, dictum nec tempus sit amet, venenatis ac felis. Sed in pharetra nulla, non mollis sem.</p><figure class=tiny><img src=https://via.placeholder.com/1600x800 alt=image><figcaption><p>figure-tiny</p></figcaption></figure><p>Suspendisse fringilla malesuada massa, in malesuada orci lacinia a. Praesent dapibus faucibus nisl, id volutpat elit bibendum eu. Nulla vitae laoreet nibh, eu hendrerit lacus. Donec lacinia auctor ligula, vel interdum ipsum malesuada vitae. Donec placerat a justo eu gravida. Aenean ultricies imperdiet convallis. Pellentesque accumsan non ex sed euismod. Proin bibendum lectus nec enim faucibus feugiat. Donec hendrerit nisi viverra ornare luctus. Nullam non viverra nisl. Nam vel tellus et tortor elementum volutpat sit amet et erat. Aliquam a libero quis libero porta consectetur. Etiam aliquam felis vel nulla mattis finibus. Mauris laoreet lacus arcu, sed rhoncus odio condimentum sed. Aenean in dui rutrum elit faucibus faucibus nec fringilla augue. Fusce non ornare mauris.</p><figure class=left><img src=https://via.placeholder.com/400x280 alt=image><figcaption><p>figure-left</p></figcaption></figure><p>In a libero varius, luctus ligula et, bibendum tortor. Sed sit amet dui malesuada, mattis justo id, ultricies enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sollicitudin cursus feugiat. Vivamus suscipit ipsum eget lobortis sollicitudin. Fusce vehicula neque tellus. Integer eu posuere quam, id laoreet tortor. Mauris sit amet turpis urna. Donec venenatis tempor dolor, nec laoreet orci aliquet et. Sed condimentum elit eu tristique aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc luctus ipsum sit amet nisl maximus pellentesque.</p><figure class=right><img src=https://via.placeholder.com/400x280 alt=image><figcaption><p>figure-right</p></figcaption></figure><p>Pellentesque eu consequat nunc. Vivamus eu eros ut nulla dapibus molestie in id tortor. Cras viverra ligula erat, tincidunt hendrerit diam blandit nec. Cras id urna vel dolor dictum mattis. Vestibulum congue erat ac eros molestie accumsan. Maecenas lorem nibh, maximus vel justo eget, facilisis egestas lectus. Mauris eu est ut odio blandit consequat id feugiat eros. Fusce id suscipit mi, et lacinia lectus. Mauris a arcu placerat dolor iaculis feugiat nec non mi. Ut porttitor elit tortor, eget tempus velit mollis eu. Aliquam sem nulla, dictum cursus mauris ac, semper ullamcorper leo.</p><p>Donec nec tincidunt est. Sed id metus in erat fringilla mattis at id turpis. Aliquam tempor vehicula faucibus. Phasellus consequat aliquam odio. Morbi a ex vitae sapien porta auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sit amet nulla arcu. Praesent ut tortor purus. Praesent id eros diam. Pellentesque vitae dolor at nibh ultrices accumsan eu id urna. Aliquam finibus interdum orci in varius. Pellentesque a enim condimentum, condimentum felis id, vehicula augue. Vivamus cursus commodo eros nec lacinia.</p><h3>Related Posts</h3><ul><li><a href=/post/made-hugo-float-menu/>How to Create A Hugo Float Menu</a></li><li><a href=/post/series-part-1/>Series Part 1</a></li><li><a href=/post/series-part-2/>Series Part 2</a></li></ul></div><div class=post__footer><span><a class=tag href=/tags/demo/>demo</a><a class=tag href=/tags/shortcode/>shortcode</a></span></div><div id=comment><h2>comments</h2><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//talktao.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
+."><div class=post__content><h1>API DEMO</h1><ul class=post__meta><li class=post__meta-item><em class="fas fa-calendar-day post__meta-icon"></em>
+<span class=post__meta-text>11/12/2022</span></li><li class=post__meta-item><em class="fas fa-stopwatch post__meta-icon"></em>
+<span class=post__meta-text>6-minute read</span></li></ul><div class=post__hr></div><p>韩你看一下大体的格式，这是登录验证及获取登录后信息部分的，比如所有请求返还的键名还有错误码你可以定一下，我现在这里按若依每个请求都有一个 <code>code</code> 放 状态码， 然后 <code>msg</code> 放相关提示</p><div class=highlight><div style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">100
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">101
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">102
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">103
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">104
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">105
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">106
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">107
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">108
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">109
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">110
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">111
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">112
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">113
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">114
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">115
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">116
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">117
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">118
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">119
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">120
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">121
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">122
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">123
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">124
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">125
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">126
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">127
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">128
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">129
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">130
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">131
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">132
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">133
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">134
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">135
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">136
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">137
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">138
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">139
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">140
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">141
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">142
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">143
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">144
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">145
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">146
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">147
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">148
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">149
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">150
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">151
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">152
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">153
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">154
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">155
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">156
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">157
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">158
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">159
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">160
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">161
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">162
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">163
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">164
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">165
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">166
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">167
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">168
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">169
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">170
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">171
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">172
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">173
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">174
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">175
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">176
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">177
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">178
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">179
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">180
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">181
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">182
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">183
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">184
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">185
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">186
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">187
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">188
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">189
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">190
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">191
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">192
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">193
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">194
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">195
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">196
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">197
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">198
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">199
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">200
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">201
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">202
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">203
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">204
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">205
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">206
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">207
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">208
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">209
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">210
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">211
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">212
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">213
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">214
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">215
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">216
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">217
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">218
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">219
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">220
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">221
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">222
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">223
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">224
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">225
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">226
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">227
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">228
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">229
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">230
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">231
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">232
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">233
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">234
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">235
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">236
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">237
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">238
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">239
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">240
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">241
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">242
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">243
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">244
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">245
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">246
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">247
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">248
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">249
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">250
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">251
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">252
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">253
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">254
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">255
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">256
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">257
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">258
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">259
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">260
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">261
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">262
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">263
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">264
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">265
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">266
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">267
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">268
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">269
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">270
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">271
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">272
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">273
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">274
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">275
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">276
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">277
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">278
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">279
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">280
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">281
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">282
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">283
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">284
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">285
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">286
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">287
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">288
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">289
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">290
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">291
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">292
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">293
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">294
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">295
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">296
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">297
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">298
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">299
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">300
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">301
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">302
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">303
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">304
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">305
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">306
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">307
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">308
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">309
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">310
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">311
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">312
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">313
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">314
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">315
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">316
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">317
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">318
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">319
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">320
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">321
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">322
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">323
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">324
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">325
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">326
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">327
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">328
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">329
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">330
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">331
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">332
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">333
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">334
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">335
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">336
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">337
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">338
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">339
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">340
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">341
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">342
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">343
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">344
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">345
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">346
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">347
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">348
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">349
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">350
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">351
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">352
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">353
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">354
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">355
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">356
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">357
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">358
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">359
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">360
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">361
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">362
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">363
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">364
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">365
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">366
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">367
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">368
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">369
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">370
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">371
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">372
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">373
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">374
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">375
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">376
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">377
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">378
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">379
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">380
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">381
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">382
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">383
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">384
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">385
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">386
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">387
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">388
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">389
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">390
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">391
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">392
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">393
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">394
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">395
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">396
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">397
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">398
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">399
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">400
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">401
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">402
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">403
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">404
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">405
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">406
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">407
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">408
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">409
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">410
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">411
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">412
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">413
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">414
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">415
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">416
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">417
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">418
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">419
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">420
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#bd93f9>1</span>. 登录验证码
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Request URL: http:<span style=color:#6272a4>//localhost:1024/dev-api/captchaImage
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>Request Method: GET
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;msg&#34;</span>: <span style=color:#f1fa8c>&#34;操作成功&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;img&#34;</span>: <span style=color:#f1fa8c>&#34;/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAA8AKADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDtrW1ga1hZoIySikkoOeKsCztv+feL/vgU2z/484P+ua/yqyKiMY8q0IjGPKtCIWdr/wA+0P8A3wKeLK1/59of+/YqUU7pT5Y9h8sexELK0/59Yf8Av2KcLG0/59YP+/YrG1zxho/h+Mm8ulMvaGM7nP4dqZ4Y8a6b4o81bUSRyx8mOXG7HrXV9Qrex9v7N8ne2gvcvY3xYWf/AD6wf9+xThYWf/PpB/37FTLzTxXLyx7D5Y9iEafZf8+lv/37H+FOGnWX/Pnb/wDfpf8ACp84rn9e8baJ4bdY7+6xMwyIkG5gPUgdK1o4aVafJSjd9kgaitWbg06x/wCfO3/79L/hThptj/z5W/8A36X/AAqvo+s2OuWEd7YTCWF+46g+h9DWkKidLkk4yjZoOWPYrjTLD/nytv8Av0v+FPGmWH/Pjbf9+l/wqwKUsFGTU8sewcsexANL0/8A58bb/vyv+FPGlaf/AM+Fr/35X/CvP/EXxg0jRr9rKzgkvpI2xI6EBB6gHua63wt4t03xXpwu7FyCDiSJ8B4z6ECu2rlmIo0VXqU2ovr/AFsSuRuyNUaVp3/Pha/9+V/wpw0nTv8AoH2v/flf8KtCniuLlj2K5Y9iqNJ03/oH2n/flf8ACq2p6Xp8ekXrpY2qusDlWEKgg7TyOK1hVXVv+QLf/wDXvJ/6CaUox5XoKUY8r0OSs/8Ajzg/65r/ACqyKr2f/HnB/wBc1/lVkU4/Chx+FDhWfq8zx2EyxttdkIVvQ4rRAqhqdsZ7dgPSrTs7lHzzbeX/AG1N/bGXcE58xjy3ufSp9O1ePQPFcV/YnMCt8yg5G08EVu+L9FESTXHkgyAfe74rj7Oy+2ZWNwJB2PSv0LC5hh8VRliq8moW5JR3ir9dNl5nJKDi+VH01ZajFdWMdxG4ZHUMp9q4rw947v5PGd3o2uLFDuO23CDABHQZ75Fc1o3jQ6ZpTaTcw/ZryNMRNKT5bntz2z+VcjqA1rVr031yu2YfdwQpGPSvDweUwi6sMU4xg1aMm18nHo13NZVHpyn0Jrt7PDo9y1of9I8pvL/3scV4HY6aJWvbrXIZvMbkO7EHJzk1p2HxL1OC2+y6jELoLwHJw/4+tbVjPa+I9GmvPKMQUlZFfoPoe9Dw+YZRRmuX3ZNe+nr8vXzQXhUaMT4d+KT4e8RfZHlJ0+6fYxJ4Vv4W/of/AK1e9Xeuafplmbm+u4oIgM5dgK+bJtCzKz6fKJNrcLn9M10tzr2k+JrK10zWIJrW8tiFRicZPQrn3966czoYbMKscTRu19uy95W62/XYmDlBcr+R6LD8XfC8t75BnmRCcCZoyF/+tXR3mo2mo6YxtriOaKVCA0bA5BFeATz+Gllayk094dp2+ZkhgfrVnStAaO8iuNM8QLBCrBwzdvqMgH9K5q+WYHlUoudJ9OdXT9HEpTl6m1beGbbRbeSN4EuHYnfI69V7D8q5nQvELeEPGBurNm+xl9s0WfvIeo+o6j6V65Dd6VrVnOtpdQ3MsICzeX2OPT0rxLxHpjabq0oGfKdiVJ7e1dWR15YnFVaGOk25rZ9fl0dtiaqtFOPQ+rtOvI720iniYMkihlI7gjNXhXE/D67Sfw3YiNwyCJQD+FduvSvkakeSbj2Zuthwqrq3/IEv/wDr2k/9BNWxVXV/+QJf/wDXtJ/6Cayl8LFL4WclZ/8AHlB/1zX+VWRVey/48oP+ua/yqyKI/Cgj8KHClKhhg0CniqKOV8Q6QLiFiF5ryTVPD11ptwbywB3IctGB29vX6V9BSwrKhBFcvq+h7wWRea7MFjamEnzQ1T0aezXZkyipLU8X1fWrbU9NjRoStyh9Onrg+ldD4b0m4vtFjkkDZGQmf7vartx4QjkvvMNsuc5OBwa9A0DSPJtgrL2r0MdmOGqYSOFw0Glfm1d7eS8iIwkpczZ4xrmm3Gl6gl5FGc7vm+XIJ9/rXqOhMNR0KN2iAjljwYyvHoRitbUfDqTS7tgI9xWtp2liK3Ee3Ax0rixGPlXw9OlNe9DZ36dF8uhSjZtnimuaNN4a1FtQ05S1oW/ew/3R/h/KsLXdSttWkt2tomE2MNkc+w969w1vQi4Yquc9q46y8HRx3/mR2yqc9QOlerg88p02q2Ig5VYqyadrrtLvbuRKk3otjJbQI7+yie7g3XHlgNIDhs49e9Yx8HTedsjuysRPOVOR/jXueneHoxbAOnOKlPhaAybtorzsPnGNw9/ZTsn03S9E72LdOL3RyHgvwtYaUhkgjka5ddryux5HpgcYqPxP4US73eZHlW59MV6XY6VHbKAFFLqOnrPERt5rjniq1Sr7ac25d76lKKSseTfDPxGun+IW8NLZPDENxBLlzvHXPoK9yjO5Qa4jTNFFneySRQohkbc7KuCx9T612tspEYBrXHYmGJq+0hHlulfW931evcUU0rE4qrq//IEv/wDr2k/9BNWxVXV/+QJf/wDXtJ/6Ca4ZfCwl8LOSsv8Ajyt/+ua/yqyK5mLWrmKJI1SIhFCjIPb8ak/t+6/55w/98n/Gso1o2RnGrGyOlFOFcz/wkN3/AM84P++T/jS/8JFd/wDPOD/vk/41Xtoj9tE6gUNErjBFcx/wkl5/zyg/75P+NL/wkt5/zyg/75P+NHtoh7aJv/2dCWztFW4oVjGAMVy3/CT3v/PK3/75b/Gl/wCEovf+eVv/AN8t/jR7aIe2idaY1bqKeqAdBXIf8JVff88rf/vlv8aX/hK77/nlbf8AfLf40e2iHtonXPAsgwRmo00+JWztFct/wlt//wA8bb/vlv8AGl/4S/UP+eNt/wB8t/8AFUe2iHtonaJGFGAKlAFcP/wmGof88bX/AL5b/wCKpf8AhMtR/wCeNr/3y3/xVHtoh7aJ3QFKVDDmuF/4TPUf+eNr/wB8N/8AFUv/AAmupf8APC0/74b/AOKo9tEPbRO4WBAc4qwoxXAf8JtqX/PC0/74b/4ql/4TjU/+eFp/3w3/AMVR7aIe2iegiqur/wDID1D/AK9pP/QTXFf8Jzqf/PC0/wC+G/8AiqjufGeo3VrNbvDahJUZGKq2QCMcfNUyrRsxSqxsz//Z&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;code&#34;</span>: <span style=color:#bd93f9>200</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;captchaEnabled&#34;</span>: <span style=color:#ff79c6>true</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;uuid&#34;</span>: <span style=color:#f1fa8c>&#34;d83283a18747443d8eea11650a6fc401&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bd93f9>2</span>. 登录成功返回
+</span></span><span style=display:flex><span>Request URL: http:<span style=color:#6272a4>//localhost:1024/dev-api/login
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>Request Method: POST
+</span></span><span style=display:flex><span>{<span style=color:#ff79c6>&#34;username&#34;</span>:<span style=color:#f1fa8c>&#34;admin&#34;</span>,<span style=color:#ff79c6>&#34;password&#34;</span>:<span style=color:#f1fa8c>&#34;admin123&#34;</span>,<span style=color:#ff79c6>&#34;code&#34;</span>:<span style=color:#f1fa8c>&#34;16&#34;</span>,<span style=color:#ff79c6>&#34;uuid&#34;</span>:<span style=color:#f1fa8c>&#34;245c726046064992b54777d32676909b&#34;</span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;msg&#34;</span>: <span style=color:#f1fa8c>&#34;操作成功&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;code&#34;</span>: <span style=color:#bd93f9>200</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;token&#34;</span>: <span style=color:#f1fa8c>&#34;eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjBmNjVhN2YwLWEzNjAtNDQ5Yi1iMjAzLTdhNTNhNGNiNTIzMCJ9.1XhaMOzjMj2dVLN5YhEehsRSmudVqRohRrP6W375KvkFr5Qe6ku3n90C-es9uiGTTlqebBxFx95qkBp3jdv02A&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bd93f9>3</span>. 登录用户信息
+</span></span><span style=display:flex><span>Request URL: http:<span style=color:#6272a4>//localhost:1024/dev-api/getInfo
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>Request Method: GET
+</span></span><span style=display:flex><span>Authorization:Bearer eyJhbGciOiJIUzUxMiJ<span style=color:#bd93f9>9</span>.eyJsb<span style=color:#bd93f9>2</span>dpbl<span style=color:#bd93f9>91</span>c<span style=color:#bd93f9>2</span>VyX<span style=color:#bd93f9>2</span>tleSI<span style=color:#bd93f9>6</span>IjBmNjVhN<span style=color:#bd93f9>2</span>YwLWEzNjAtNDQ<span style=color:#bd93f9>5</span>Yi<span style=color:#bd93f9>1</span>iMjAzLTdhNTNhNGNiNTIzMCJ<span style=color:#bd93f9>9.1</span>XhaMOzjMj<span style=color:#bd93f9>2</span>dVLN<span style=color:#bd93f9>5</span>YhEehsRSmudVqRohRrP<span style=color:#bd93f9>6</span>W<span style=color:#bd93f9>375</span>KvkFr<span style=color:#bd93f9>5</span>Qe<span style=color:#bd93f9>6</span>ku<span style=color:#bd93f9>3</span>n<span style=color:#bd93f9>90</span>C-es<span style=color:#bd93f9>9</span>uiGTTlqebBxFx<span style=color:#bd93f9>95</span>qkBp<span style=color:#bd93f9>3</span>jdv<span style=color:#bd93f9>02</span>A
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;msg&#34;</span>: <span style=color:#f1fa8c>&#34;操作成功&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;code&#34;</span>: <span style=color:#bd93f9>200</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;permissions&#34;</span>: [
+</span></span><span style=display:flex><span>        <span style=color:#f1fa8c>&#34;*:*:*&#34;</span>
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;roles&#34;</span>: [
+</span></span><span style=display:flex><span>        <span style=color:#f1fa8c>&#34;admin&#34;</span>
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;user&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;createBy&#34;</span>: <span style=color:#f1fa8c>&#34;admin&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;createTime&#34;</span>: <span style=color:#f1fa8c>&#34;2022-12-07 21:15:39&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;updateBy&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;updateTime&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;remark&#34;</span>: <span style=color:#f1fa8c>&#34;管理员&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;userId&#34;</span>: <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;deptId&#34;</span>: <span style=color:#bd93f9>103</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;userName&#34;</span>: <span style=color:#f1fa8c>&#34;admin&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;nickName&#34;</span>: <span style=color:#f1fa8c>&#34;若依&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;email&#34;</span>: <span style=color:#f1fa8c>&#34;ry@163.com&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;phonenumber&#34;</span>: <span style=color:#f1fa8c>&#34;15888888888&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;sex&#34;</span>: <span style=color:#f1fa8c>&#34;1&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;avatar&#34;</span>: <span style=color:#f1fa8c>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;password&#34;</span>: <span style=color:#f1fa8c>&#34;$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;status&#34;</span>: <span style=color:#f1fa8c>&#34;0&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;delFlag&#34;</span>: <span style=color:#f1fa8c>&#34;0&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;loginIp&#34;</span>: <span style=color:#f1fa8c>&#34;127.0.0.1&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;loginDate&#34;</span>: <span style=color:#f1fa8c>&#34;2022-12-07T21:26:39.000+08:00&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;dept&#34;</span>: {
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;createBy&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;createTime&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;updateBy&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;updateTime&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;remark&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;deptId&#34;</span>: <span style=color:#bd93f9>103</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;parentId&#34;</span>: <span style=color:#bd93f9>101</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;ancestors&#34;</span>: <span style=color:#f1fa8c>&#34;0,100,101&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;deptName&#34;</span>: <span style=color:#f1fa8c>&#34;研发部门&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;orderNum&#34;</span>: <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;leader&#34;</span>: <span style=color:#f1fa8c>&#34;若依&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;phone&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;email&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;status&#34;</span>: <span style=color:#f1fa8c>&#34;0&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;delFlag&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;parentName&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;children&#34;</span>: []
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;roles&#34;</span>: [
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;createBy&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;createTime&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;updateBy&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;updateTime&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;remark&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;roleId&#34;</span>: <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;roleName&#34;</span>: <span style=color:#f1fa8c>&#34;超级管理员&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;roleKey&#34;</span>: <span style=color:#f1fa8c>&#34;admin&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;roleSort&#34;</span>: <span style=color:#bd93f9>1</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;dataScope&#34;</span>: <span style=color:#f1fa8c>&#34;1&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;menuCheckStrictly&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;deptCheckStrictly&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;status&#34;</span>: <span style=color:#f1fa8c>&#34;0&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;delFlag&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;flag&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;menuIds&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;deptIds&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;permissions&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;admin&#34;</span>: <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        ],
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;roleIds&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;postIds&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;roleId&#34;</span>: <span style=color:#ff79c6>null</span>,
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>&#34;admin&#34;</span>: <span style=color:#ff79c6>true</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bd93f9>4</span>. 登录用户菜单
+</span></span><span style=display:flex><span>Request URL: http:<span style=color:#6272a4>//localhost:1024/dev-api/getRouters
+</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>Request Method: GET
+</span></span><span style=display:flex><span>Bearer eyJhbGciOiJIUzUxMiJ<span style=color:#bd93f9>9</span>.eyJsb<span style=color:#bd93f9>2</span>dpbl<span style=color:#bd93f9>91</span>c<span style=color:#bd93f9>2</span>VyX<span style=color:#bd93f9>2</span>tleSI<span style=color:#bd93f9>6</span>IjBmNjVhN<span style=color:#bd93f9>2</span>YwLWEzNjAtNDQ<span style=color:#bd93f9>5</span>Yi<span style=color:#bd93f9>1</span>iMjAzLTdhNTNhNGNiNTIzMCJ<span style=color:#bd93f9>9.1</span>XhaMOzjMj<span style=color:#bd93f9>2</span>dVLN<span style=color:#bd93f9>5</span>YhEehsRSmudVqRohRrP<span style=color:#bd93f9>6</span>W<span style=color:#bd93f9>375</span>KvkFr<span style=color:#bd93f9>5</span>Qe<span style=color:#bd93f9>6</span>ku<span style=color:#bd93f9>3</span>n<span style=color:#bd93f9>90</span>C-es<span style=color:#bd93f9>9</span>uiGTTlqebBxFx<span style=color:#bd93f9>95</span>qkBp<span style=color:#bd93f9>3</span>jdv<span style=color:#bd93f9>02</span>A
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;msg&#34;</span>: <span style=color:#f1fa8c>&#34;操作成功&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;code&#34;</span>: <span style=color:#bd93f9>200</span>,
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>&#34;data&#34;</span>: [
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;System&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;/system&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;redirect&#34;</span>: <span style=color:#f1fa8c>&#34;noRedirect&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;Layout&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;alwaysShow&#34;</span>: <span style=color:#ff79c6>true</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;系统管理&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;system&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;children&#34;</span>: [
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;User&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;user&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/user/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;用户管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;user&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Role&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;role&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/role/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;角色管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;peoples&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Menu&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;menu&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/menu/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;菜单管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;tree-table&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Dept&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;dept&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/dept/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;部门管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;tree&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Post&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;post&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/post/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;岗位管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;post&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Dict&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;dict&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/dict/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;字典管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;dict&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Config&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;config&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/config/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;参数设置&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;edit&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Notice&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;notice&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;system/notice/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;通知公告&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;message&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Log&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;log&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;redirect&#34;</span>: <span style=color:#f1fa8c>&#34;noRedirect&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;ParentView&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;alwaysShow&#34;</span>: <span style=color:#ff79c6>true</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;日志管理&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;log&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    },
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;children&#34;</span>: [
+</span></span><span style=display:flex><span>                        {
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Operlog&#34;</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;operlog&#34;</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/operlog/index&#34;</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;操作日志&#34;</span>,
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;form&#34;</span>,
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                            }
+</span></span><span style=display:flex><span>                        },
+</span></span><span style=display:flex><span>                        {
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Logininfor&#34;</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;logininfor&#34;</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/logininfor/index&#34;</span>,
+</span></span><span style=display:flex><span>                            <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;登录日志&#34;</span>,
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;logininfor&#34;</span>,
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                                <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                            }
+</span></span><span style=display:flex><span>                        }
+</span></span><span style=display:flex><span>                    ]
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Monitor&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;/monitor&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;redirect&#34;</span>: <span style=color:#f1fa8c>&#34;noRedirect&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;Layout&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;alwaysShow&#34;</span>: <span style=color:#ff79c6>true</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;系统监控&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;monitor&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;children&#34;</span>: [
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Online&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;online&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/online/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;在线用户&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;online&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Job&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;job&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/job/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;定时任务&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;job&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Druid&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;druid&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/druid/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;数据监控&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;druid&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Server&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;server&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/server/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;服务监控&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;server&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Cache&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;cache&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/cache/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;缓存监控&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;redis&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;CacheList&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;cacheList&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;monitor/cache/list&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;缓存列表&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;redis-list&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Tool&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;/tool&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;redirect&#34;</span>: <span style=color:#f1fa8c>&#34;noRedirect&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;Layout&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;alwaysShow&#34;</span>: <span style=color:#ff79c6>true</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;系统工具&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;tool&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>            },
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;children&#34;</span>: [
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Build&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;build&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;tool/build/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;表单构建&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;build&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Gen&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;gen&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;tool/gen/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;代码生成&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;code&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                },
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Swagger&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;swagger&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;tool/swagger/index&#34;</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;系统接口&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;swagger&#34;</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                        <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#ff79c6>null</span>
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            ]
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;name&#34;</span>: <span style=color:#f1fa8c>&#34;Http://ruoyi.vip&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;path&#34;</span>: <span style=color:#f1fa8c>&#34;http://ruoyi.vip&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;hidden&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;component&#34;</span>: <span style=color:#f1fa8c>&#34;Layout&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>&#34;meta&#34;</span>: {
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;title&#34;</span>: <span style=color:#f1fa8c>&#34;若依官网&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;icon&#34;</span>: <span style=color:#f1fa8c>&#34;guide&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;noCache&#34;</span>: <span style=color:#ff79c6>false</span>,
+</span></span><span style=display:flex><span>                <span style=color:#ff79c6>&#34;link&#34;</span>: <span style=color:#f1fa8c>&#34;http://ruoyi.vip&#34;</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><h3>Related Posts</h3><ul><li><a href=/post/made-hugo-float-menu/>How to Create A Hugo Float Menu</a></li><li><a href=/post/series-part-1/>Series Part 1</a></li><li><a href=/post/series-part-2/>Series Part 2</a></li></ul></div><div class=post__footer></div><div id=comment><h2>comments</h2><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//talktao.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
 Partoo
 2022</li><li class=footer__item><a href=https://www.github.com/Partoo/blog>Partoo</a> theme based on <a href=https://www.gohugo.io>Hugo</a></li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css integrity=sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js integrity=sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js integrity=sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v crossorigin=anonymous onload=renderMathInElement(document.body)></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L57MVQGWSV"></script>

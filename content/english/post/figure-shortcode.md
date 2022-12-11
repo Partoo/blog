@@ -1,6 +1,6 @@
 ---
 title: 'API DEMO'
-date: 2022-12-11T10:27:41+00:00
+date: 2022-12-11
 draft: false
 ---
 
